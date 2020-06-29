@@ -11,7 +11,6 @@ public class MBGTest {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		File configFile = new File("mybatis-generator.xml");
-		System.out.println("test");
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = cp.parseConfiguration(configFile);
 		DefaultShellCallback callback = new DefaultShellCallback(overwrite);
