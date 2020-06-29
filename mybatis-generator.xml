@@ -5,7 +5,7 @@
 		<commentGenerator>
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/food-lehuo" userId="root" password="root">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://212.64.55.141:3306/food_lehuo" userId="llx" password="root">
 		</jdbcConnection>
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
@@ -20,6 +20,9 @@
 		<javaClientGenerator type="XMLMAPPER" targetPackage="com.food.lehuo.dao" targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-		<table tableName="xxx" domainObjectName="xxx"></table>
+		<table tableName="blog" domainObjectName="Blog"></table>
+		<table tableName="food" domainObjectName="Food"></table>
+		<table tableName="order" domainObjectName="Order"></table>
+		<table tableName="users" domainObjectName="Users"></table>
 	</context>
 </generatorConfiguration>

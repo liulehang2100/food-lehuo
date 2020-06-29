@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.food.lehuo.dao.FoodMapper">
+  <resultMap id="BaseResultMap" type="com.food.lehuo.bean.Food">
+    <id column="fid" jdbcType="INTEGER" property="fid" />
+    <result column="fname" jdbcType="VARCHAR" property="fname" />
+    <result column="fportrait" jdbcType="VARCHAR" property="fportrait" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="fdescribe" jdbcType="VARCHAR" property="fdescribe" />
+    <result column="weight" jdbcType="INTEGER" property="weight" />
+    <result column="recommend" jdbcType="INTEGER" property="recommend" />
+    <result column="cuisine" jdbcType="INTEGER" property="cuisine" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    fid, fname, fportrait, price, fdescribe, weight, recommend, cuisine
+  </sql>
+  <select id="selectByExample" parameterType="com.food.lehuo.bean.FoodExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from food
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from food
+    where fid = #{fid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from food
+    where fid = #{fid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.food.lehuo.bean.FoodExample">
+    delete from food
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.food.lehuo.bean.Food">
+    insert into food (fid, fname, fportrait, 
+      price, fdescribe, weight, 
+      recommend, cuisine)
+    values (#{fid,jdbcType=INTEGER}, #{fname,jdbcType=VARCHAR}, #{fportrait,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DOUBLE}, #{fdescribe,jdbcType=VARCHAR}, #{weight,jdbcType=INTEGER}, 
+      #{recommend,jdbcType=INTEGER}, #{cuisine,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.food.lehuo.bean.Food">
+    insert into food
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="fname != null">
+        fname,
+      </if>
+      <if test="fportrait != null">
+        fportrait,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="fdescribe != null">
+        fdescribe,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="recommend != null">
+        recommend,
+      </if>
+      <if test="cuisine != null">
+        cuisine,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fid != null">
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="fname != null">
+        #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fportrait != null">
+        #{fportrait,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="fdescribe != null">
+        #{fdescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="recommend != null">
+        #{recommend,jdbcType=INTEGER},
+      </if>
+      <if test="cuisine != null">
+        #{cuisine,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.food.lehuo.bean.FoodExample" resultType="java.lang.Long">
+    select count(*) from food
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update food
+    <set>
+      <if test="record.fid != null">
+        fid = #{record.fid,jdbcType=INTEGER},
+      </if>
+      <if test="record.fname != null">
+        fname = #{record.fname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fportrait != null">
+        fportrait = #{record.fportrait,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DOUBLE},
+      </if>
+      <if test="record.fdescribe != null">
+        fdescribe = #{record.fdescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weight != null">
+        weight = #{record.weight,jdbcType=INTEGER},
+      </if>
+      <if test="record.recommend != null">
+        recommend = #{record.recommend,jdbcType=INTEGER},
+      </if>
+      <if test="record.cuisine != null">
+        cuisine = #{record.cuisine,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update food
+    set fid = #{record.fid,jdbcType=INTEGER},
+      fname = #{record.fname,jdbcType=VARCHAR},
+      fportrait = #{record.fportrait,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DOUBLE},
+      fdescribe = #{record.fdescribe,jdbcType=VARCHAR},
+      weight = #{record.weight,jdbcType=INTEGER},
+      recommend = #{record.recommend,jdbcType=INTEGER},
+      cuisine = #{record.cuisine,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.food.lehuo.bean.Food">
+    update food
+    <set>
+      <if test="fname != null">
+        fname = #{fname,jdbcType=VARCHAR},
+      </if>
+      <if test="fportrait != null">
+        fportrait = #{fportrait,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="fdescribe != null">
+        fdescribe = #{fdescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="recommend != null">
+        recommend = #{recommend,jdbcType=INTEGER},
+      </if>
+      <if test="cuisine != null">
+        cuisine = #{cuisine,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.food.lehuo.bean.Food">
+    update food
+    set fname = #{fname,jdbcType=VARCHAR},
+      fportrait = #{fportrait,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DOUBLE},
+      fdescribe = #{fdescribe,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=INTEGER},
+      recommend = #{recommend,jdbcType=INTEGER},
+      cuisine = #{cuisine,jdbcType=INTEGER}
+    where fid = #{fid,jdbcType=INTEGER}
+  </update>
+</mapper>
