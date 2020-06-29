@@ -1,0 +1,887 @@
+/*重置样式*/
+
+@import 'reset.css';
+/* 主体 */
+
+.nav-wapper {
+    height: 44px;
+    background-color: rgba(45, 45, 45, 0.98);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+}
+
+.global-nav {
+    height: 44px;
+    width: 64%;
+}
+
+.nav-item1 {
+    height: 44px;
+    width: 100px;
+    text-align: center;
+}
+
+.nav-ul .nav-item1 a {
+    display: block;
+    height: 44px;
+    width: 48px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    transition: all 0.2s linear;
+}
+
+.m-mac {
+    background-image: url("../../images/shopdata_images/mac.svg");
+    background-size: 100% 100%;
+}
+
+.m-iPad {
+    background-image: url("../../images/shopdata_images/ipad.svg");
+    background-size: 100% 100%;
+}
+
+.m-iphone {
+    background-image: url("../../images/shopdata_images/iPhone.svg");
+    background-size: 100% 100%;
+}
+
+.m-watch {
+    background-image: url("../../images/shopdata_images/watch.svg");
+    background-size: 100% 100%;
+}
+
+.m-music {
+    background-image: url("../../images/shopdata_images/music.svg");
+    background-size: 100% 100%;
+}
+
+/*隐藏菜单*/
+.menu{
+    background-color:  rgba(0, 0, 0, 0.96);
+    height: 100%;
+    width: 100%;
+    top:44px;
+    position: fixed;
+    z-index: 3;
+    transition: all 0.5s linear;
+    overflow: hidden;
+}
+.menu-open {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    height: 24px;
+    width: 24px;
+    background-image: url("../../images/shopdata_images/menu.svg");
+    background-size: 100% 100%;
+    display: none;
+}
+
+.ms-wapper{
+    background-color:  #333;
+    top: 44px;
+    width: 80%;
+    height: 36px;
+    margin:  10px auto 10px;
+    left:10%;
+    border-radius: 4px;
+}
+.menu-search
+{
+    display: block;
+    outline: 0;
+    -webkit-appearance: none;
+    height: 28px;
+    width: 100px;
+    border: 0;
+    border-radius: 0;
+    color: #f2f2f2;
+    margin: 8px 5px 0 8px;
+   
+    background-color:transparent;
+}
+.menu-hi {
+    display: block;
+    top:104px;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.96);
+    transition: all 0.5s;
+}
+
+.menu-li {
+    display: block;
+    height: 48px;
+    width: 80%;
+    margin: 0 auto;
+    border: 0.3px solid #333;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    margin: 0 auto;
+}
+
+
+.menu-li a {
+    height: 48px;
+    width: 48px;
+    line-height: 48px;
+    display: block;
+    /* margin: 0 auto; */
+}
+
+.menu-li a:hover {
+    opacity: 0.7;
+}
+
+.menu-open:hover .menu-hi {
+    height: 300px;
+}
+
+.menu-open:hover {
+    overflow: visible;
+}
+
+.home {
+    background-image: url("/apple/images/shopdata_images/Apple_home.svg");
+    background-size: 100% 100%;
+}
+
+.mac {
+    background-image: url("/apple/images/shopdata_images/mac.svg");
+    background-size: 100% 100%;
+}
+
+.iPad {
+    background-image: url("/apple/images/shopdata_images/ipad.svg");
+    background-size: 100% 100%;
+}
+
+.iPhone {
+    background-image: url("/apple/images/shopdata_images/iPhone.svg");
+    background-size: 100% 100%;
+}
+
+.watch {
+    background-image: url("/apple/images/shopdata_images/watch.svg");
+    background-size: 100% 100%;
+}
+
+.music {
+    background-image: url("/apple/images/shopdata_images/music.svg");
+    background-size: 100% 100%;
+}
+
+.surpport {
+    background-image: url("/apple/images/shopdata_images/support.svg");
+    background-size: 100% 100%;
+}
+
+.search {
+    background-image: url("/apple/images/shopdata_images/search.svg");
+    background-size: 100% 100%;
+}
+
+.bag {
+    background-image: url("/apple/images/shopdata_images/pakage.svg");
+    background-size: 100% 100%;
+}
+
+.nav-ul .nav-item1 a:hover {
+    opacity: 0.7;
+}
+
+/*
+搜索 按钮js要用到的样式
+*/
+
+.vinish {
+    opacity: 0;
+    height: 30px;
+    width: 34px;
+}
+
+/* 搜索 栏*/
+.search-box {
+    position: fixed;
+    z-index: 2;
+    width: 42%;
+    height: 300px;
+    display: none;
+    left: 28%;
+    transition: all 0.5s linear;
+    /* animation:search-appear 0.5s linear; */
+    overflow: hidden;
+}
+
+@keyframes search-appear {
+    0% {
+        margin-left: 50px;
+    }
+    50% {
+        margin-left: 25px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+
+.sbox-ul {
+    width: 98%;
+}
+
+.search-box li {
+    height: 30px;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.9);
+    display: block;
+}
+
+.search-box .sbox-li1 {
+    background-color: transparent;
+    height: 44px;
+    display: flex;
+}
+
+.search-button {
+    background-image: url(../image/search-button.svg);
+    height: 18px;
+    width: 18px;
+    background-size: 100% 100%;
+    margin: 13px 10px 13px;
+}
+
+.search-input {
+    display: block;
+    outline: 0;
+    -webkit-appearance: none;
+    height: 28px;
+    width: 100px;
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+    color: #f2f2f2;
+    margin: 8px 5px 0 8px;
+}
+
+.search-box a {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: white;
+}
+
+.search-box .sbox-a1 {
+    font-size: 8px;
+    margin-left: 26px;
+    color: #888888;
+    cursor: default;
+}
+
+.search-box .sb-content a:hover {
+    color: #0070c9;
+}
+
+.search-box li.sb-content:hover {
+    background-color: #f2f2f2;
+}
+
+.close-button {
+    background-image: url("../../images/shopdata_images/close.svg");
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    position: fixed;
+    z-index: 2;
+    left: 80%;
+    top: 10px;
+    display: none;
+}
+
+.close-button:hover {
+    opacity: 0.7;
+}
+
+/*购物车*/
+
+.triangle {
+    height: 0;
+    width: 0;
+    border: 10px solid;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: #ffffff;
+    position: fixed;
+    top: 40px;
+    left: 1114px;
+}
+
+.shopping-car {
+    height: 300px;
+    width: 300px;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    top: 60px;
+    margin-right: 10%;
+}
+
+.shopping-car li {
+    display: flex;
+    height: 42px;
+    width: 76%;
+    border: 0.3px solid #888888;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    margin: 0 auto;
+}
+
+.information {
+    height: 86px;
+    font-size: 13px;
+    line-height: 86px;
+    color: #888;
+    text-align: center;
+}
+
+.shopping-car a {
+    line-height: 42px;
+    height: 42px;
+    color: #1296db;
+    font-size: 12px;
+}
+
+.shopping-car li div {
+    height: 16px;
+    width: 16px;
+    background-size: 100% 100%;
+    margin: 13px 10px 13px 0;
+}
+
+.shopping-dai {
+    background-image: url(../image/shopping-dai.svg);
+}
+
+.shoucang {
+    background-image: url(../image/shoucang.svg);
+}
+
+.dingdan {
+    background-image: url(../image/cube.svg);
+}
+
+.shezhi {
+    background-image: url(../image/shezhi.svg);
+}
+
+.lode {
+    background-image: url(../image/account.svg);
+}
+
+.shopping-car a:hover {
+    text-decoration: underline;
+}
+
+/*内容部分*/
+
+/*独立板块 standalone*/
+
+.standalone {
+    background-color: #fafafa;
+    height: 350px;
+    margin: 0 0 10px;
+}
+
+.standalone-p1 {
+    padding: 150px 0 0 0;
+    font-size: 30px;
+    font-weight: bold;
+    width: 80%;
+    margin: 0 auto 0;
+    text-align: center;
+}
+
+.standalone-p2 {
+    font-size: 18px;
+    padding: 15px 0 0;
+    text-align: center;
+    width: 470px;
+    height: 58px;
+    line-height: 29px;
+}
+
+.standalone-p3 {
+    padding: 15px 0 0;
+    text-align: center;
+    color: #0070c9;
+}
+
+.p-a {
+    display: inline-block;
+    padding: 0 17px 0;
+}
+
+.p-a:hover {
+    text-decoration: underline;
+}
+
+.item {
+    background-color: #fafafa;
+    height: 575px;
+    margin: 0 0 10px;
+}
+
+.item-p1 {
+    padding: 35px 0 0 0;
+    margin: 0 auto 0;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    /* 文字对齐居中*/
+}
+
+.item-p2 {
+    margin: 0 auto 20px;
+    text-align: center;
+    width: 60%；
+}
+
+.item-p2 a {
+    color: black;
+    display: inline-block;
+    width: 545px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    height: 30px;
+}
+
+.item-p3 {
+    /* padding: 40px 0 0 ; */
+    margin: 10px auto 0;
+    text-align: center;
+    color: #0070c9;
+    /*包含在p3标签的所有颜色都为蓝色，用来设置 > 符号*/
+}
+
+.img1 {
+    background-image: url(../image/iPhoneXRs.JPG);
+    width: 622px;
+    height: 320px;
+}
+
+.img2 {
+    background-image: url(../image/iPhoneXss.JPG);
+    width: 600px;
+    height: 290px;
+}
+
+.div2 .p-a {
+    margin: 15px 0 49px;
+}
+
+.div3 .p-a {
+    margin: 45px 0 20px;
+}
+
+.div4 {
+    padding: 20px 0 0;
+    height: 580px;
+    background-color: #fafafa;
+    margin: 0 0 10px;
+}
+
+.img3 {
+    background-image: url(../image/WATCH.JPG);
+    width: 206px;
+    height: 78px;
+}
+
+.img4 {
+    background-image: url(../image/watches.jpg);
+    width: 510px;
+    height: 360px;
+}
+
+.small-wapper {
+    display: flex;
+    justify-content: space-around;
+    /*周围都有空间*/
+    /* height: 550px; */
+    width: 100%;
+    overflow: hidden;
+}
+
+.small {
+    position: relative;
+    height: 550px;
+    width: 745px;
+    background-color: #fafafa;
+    margin: 5px 5px 5px;
+    overflow: hidden;
+}
+
+.small-font {
+    position: relative;
+    width: 78%;
+    text-align: center;
+    margin: 0 auto 20px;
+    padding: 20px 0 0px;
+}
+
+.small-font .p-a1 {
+    font-size: 14px;
+    text-align: center;
+}
+
+.small-font-p1 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 10px;
+    padding: 20px 0 0px;
+}
+
+.small-p1-a {
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin: 0 auto 0;
+}
+
+.img5 {
+    background-image: url(../image/div5.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.small-img {
+    position: absolute;
+    z-index: 0;
+}
+
+.img6 {
+    background-image: url(../image/airs.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.small-font-p2 {
+    color: black;
+    font-size: 17px;
+    text-align: center;
+    margin: 0 auto 10;
+}
+
+.p2-a {
+    color: black;
+    font-size: 17px;
+    text-align: center;
+    margin: 0 auto 0;
+    line-height: 19px;
+    height: 19px;
+}
+
+.div6-1 {
+    background-color: black;
+}
+
+.img7 {
+    background-image: url(../image/Macpro.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.div6 .small-p1-a {
+    color: white;
+}
+
+.div6 .p2-a {
+    color: white;
+}
+
+.div6-1 .item-p3 a {
+    color: #6bf;
+}
+
+.div6-2 {
+    background-color: white;
+}
+
+.img8 {
+    background-image: url(../image/human1.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.div6-2 .item-p3 a {
+    color: white;
+}
+
+.div6-2 .item-p3 {
+    color: white;
+}
+
+.div6-2 .style3-img {
+    left: 0;
+}
+
+.img9 {
+    background-image: url(../image/airpods.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.img10 {
+    background-image: url(../image/iPodPro.jpg);
+    width: 70%;
+    height: 70%;
+}
+
+.div7-2 .small-img {
+    left: 20%;
+    top: 40%;
+}
+
+/*总页脚*/
+
+.global-fotter {
+    background-color: #f2f2f2;
+    margin: 0px auto 0;
+    padding: 20px 0 0;
+    flex-direction: column;
+}
+
+.help {
+    width: 80%;
+    margin: 0px auto 10px;
+}
+
+.help-content {
+    margin: 0px auto 0;
+    font-size: 11px;
+    font-family: arial;
+}
+
+.help a {
+    font-size: 12px;
+    font-family: arial;
+}
+
+.hr1 {
+    margin: 20px 0 10px;
+}
+
+.menu-nav {
+    width: 70%;
+    margin: 10px auto 0;
+}
+
+.uls {
+    height: 300px;
+    width: 100%;
+    font-family: arial;
+    margin: 0 auto 35px;
+    justify-content: space-around;
+    /*周围有一定空间*/
+    align-items: center;
+}
+
+.one-ul {
+    display: inline-block;
+    height: 300px;
+    width: 20%;
+}
+
+.ul {
+    display: inline-block;
+    height: 300px;
+    width: 150px;
+}
+
+.li-head {
+    display: block;
+    color: #333333;
+    padding: 7px 0 7px;
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: 600;
+}
+
+.li-item {
+    display: block;
+    padding: 7px 0 7px;
+    line-height: 11px;
+}
+
+.li-a {
+    color: #555555;
+    font-size: 11.5px;
+    margin: 10px 0 50px;
+}
+
+.li-a:hover {
+    text-decoration: underline;
+}
+
+.footer-p1 {
+    color: #555555;
+    width: 80%;
+    font-size: 11.5px;
+    margin: 20px auto 20px;
+}
+
+.footer-p1 a {
+    color: #0070c9;
+    font-size: 11.5px;
+}
+
+.footer-p1 a:hover {
+    text-decoration: underline;
+}
+
+.small-footer {
+    width: 70%;
+}
+
+.footer-p2 {
+    color: #888888;
+    font-size: 12px;
+    width: 270px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+}
+
+.footer-p3 {
+    color: #333333;
+    font-size: 12px;
+}
+
+.small-footer .one-ul {
+    height: 12px;
+    width: 60px;
+}
+
+.small-footer .li-a {
+    color: #555555;
+    font-size: 11.5px;
+    margin: 0;
+}
+
+.small-footer .uls {
+    justify-content: flex-start;
+    width: 400px;
+    height: 30px;
+    display: block;
+}
+
+.hidsec {
+    display: none;
+    width: 80%;
+    overflow: hidden;
+    /* display: block; */
+}
+
+.hid {
+    display: block;
+    width: 100%;
+}
+
+.li-hid {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    height: 20px;
+    line-height: 20px;
+    color: #333;
+    border-top:0.3px solid #888888; 
+    margin: 10px 0;
+}
+
+.addhao{
+background-image: url(../image/addhao.svg);
+background-size: 100% 100%;
+height: 12px;
+width:12px;
+margin: 4px 0;
+transition:transform  0.5s linear;
+}
+.hid .hi-ul{
+    overflow: hidden;
+    height: auto;
+    width: 150px;
+    transition: all 0.5s linear;
+}
+.li2-item {
+    display: block;
+    padding: 7px 0 7px;
+    line-height: 11px;
+}
+.li2-a {
+    color: #555555;
+    font-size: 11.5px;
+    margin: 10px 0 50px;
+}
+@media only screen and (max-width: 818px) {
+    .nav-ul li {
+        display: none;
+    }
+    .menu-open {
+        display: block;
+    }
+    .nav-ul .homewapper {
+        display: block;
+        height: 44px;
+        position: relative;
+        left: 50%;
+        margin-left: -24px;
+    }
+    .home {
+        position: absolute;
+    }
+    .nav-ul .bagwapper {
+        display: block;
+        height: 44px;
+        position: absolute;
+        right: 0;
+    }
+    .bag {
+        position: absolute;
+        right: 0;
+        /*位于最右端*/
+    }
+    .menu-nav {
+        display: none;
+    }
+    .hidsec {
+        display: block;
+       
+    }
+    
+    .small-wapper {
+        flex-wrap: wrap;
+    }
+    .close-button {
+        display: none;
+    }
+    .search-box {
+        display: none;
+    }
+    .triangle {
+        left: unset;
+        right: 15px;
+    }
+    .shopping-car {
+        margin-right: 1%;
+    }
+}

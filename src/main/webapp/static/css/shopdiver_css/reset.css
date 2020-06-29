@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: #0070c9;
+    text-decoration: none;
+    font-size: 17px;
+}
+ul{
+    list-style: none;
+}
+.auto{
+    margin: 0 auto 0;   
+}
+.c8{
+    color: #888888;
+}
+.cw{
+    color: white;
+}
+.img-full{
+    background-size: 100% 100%; 
+}
+.flex{
+    display: flex;
+}
