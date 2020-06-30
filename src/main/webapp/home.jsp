@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,48 +95,27 @@
 				<div class="clearfix"> </div>
 			</div>
 			<div class="content-mid">
-				<a href="menu.html">
-					<div class="col-md-4 food-grid animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-						<div class=" hover-fold">
-						  <h4>FOOD</h4>
-						  <div class="top">
-							<div class="front face"></div>
-							<div class="back face">
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-							</div>
-						  </div>
-						  <div class="bottom"></div>
-						</div>
-					</div>
-				</a>
-				<a href="menu.html">
-				<div class="col-md-4 food-grid animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
-					<div class=" hover-fold">
-					  <h4>FOOD</h4>
-					  <div class="top">
-						<div class="front face front1"></div>
-						<div class="back face">
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-						</div>
-					  </div>
-					  <div class="bottom bottom1"></div>
-					</div>
-				</div>
-				</a>
-				<a href="menu.html">
-				<div class="col-md-4 food-grid animated wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
-					<div class=" hover-fold">
-					  <h4>FOOD</h4>
-					  <div class="top">
-						<div class="front face front2"></div>
-						<div class="back face">
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-						</div>
-					  </div>
-					  <div class="bottom bottom2"></div>
-					</div>
-				</div>
-				</a>
+				<c:forEach items="${list }" var="li">
+					<c:if test="${sid }==1">
+							<a href="menu.html">
+								<div class="col-md-4 food-grid animated wow fadeInUp"
+									data-wow-duration="1000ms" data-wow-delay="500ms">
+									<div class=" hover-fold">
+										<h4>${li.fname }</h4>
+										<div class="top">
+											<div class="front face"></div>
+											<div class="back face">
+												<p>${li.fdescribe }
+												</p>
+											</div>
+										</div>
+										<div class="bottom"></div>
+									</div>
+								</div>
+							</a>
+						</c:if>
+				
+				</c:forEach>
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -330,8 +310,7 @@
 						<li><a href="#"><i class="ic1"></i></a></li>
 						<li><a href="#"><i class="ic2"></i></a></li>
 						<li><a href="#"><i class="ic3"></i></a></li>
-					</ul>
-
+					</ul>s
 				</div>
 			<div class="clearfix"> </div>
 					
@@ -340,4 +319,5 @@
 	</div>		
 	<!--//footer-->
 </body>
+
 </html>

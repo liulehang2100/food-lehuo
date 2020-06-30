@@ -17,6 +17,8 @@ public class Food {
 
     private Integer cuisine;
 
+    private Integer sid;
+
     public Integer getFid() {
         return fid;
     }
@@ -79,5 +81,13 @@ public class Food {
 
     public void setCuisine(Integer cuisine) {
         this.cuisine = cuisine;
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
     }
 }
