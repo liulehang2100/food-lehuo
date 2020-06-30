@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="Logo.png">
     <!-- Modernizr JS -->
     <script src="js/register_js/modernizr-2.6.2.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/jquery-3.4.1.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
 </head>
 <body class="style-3">
 <script type="text/javascript">
@@ -58,7 +58,6 @@
     </div>
     <div class="row">
         <div class="col-md-4 col-md-push-8">
-
 
             <!-- Start Sign In Form -->
             <form action="codeServlet" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
