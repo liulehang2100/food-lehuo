@@ -11,13 +11,13 @@ public class Food {
 
     private String fdescribe;
 
-    private Integer weight;
-
     private Integer recommend;
 
     private Integer cuisine;
 
     private Integer sid;
+
+    private String fimg;
 
     public Integer getFid() {
         return fid;
@@ -59,14 +59,6 @@ public class Food {
         this.fdescribe = fdescribe == null ? null : fdescribe.trim();
     }
 
-    public Integer getWeight() {
-        return weight;
-    }
-
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
-
     public Integer getRecommend() {
         return recommend;
     }
@@ -89,5 +81,13 @@ public class Food {
 
     public void setSid(Integer sid) {
         this.sid = sid;
+    }
+
+    public String getFimg() {
+        return fimg;
+    }
+
+    public void setFimg(String fimg) {
+        this.fimg = fimg == null ? null : fimg.trim();
     }
 }

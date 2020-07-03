@@ -7,6 +7,8 @@
     <result column="otime" jdbcType="TIMESTAMP" property="otime" />
     <result column="fid" jdbcType="INTEGER" property="fid" />
     <result column="totalprice" jdbcType="DOUBLE" property="totalprice" />
+    <result column="foodnum" jdbcType="INTEGER" property="foodnum" />
+    <result column="tijiaotime" jdbcType="TIMESTAMP" property="tijiaotime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    oid, uid, otime, fid, totalprice
+    oid, uid, otime, fid, totalprice, foodnum, tijiaotime
   </sql>
   <select id="selectByExample" parameterType="com.food.lehuo.bean.OrderExample" resultMap="BaseResultMap">
     select
@@ -86,24 +88,26 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from order
+    from `order`
     where oid = #{oid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from order
+    delete from `order`
     where oid = #{oid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.food.lehuo.bean.OrderExample">
-    delete from order
+    delete from `order`
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.food.lehuo.bean.Order">
-    insert into order (oid, uid, otime, 
-      fid, totalprice)
+    insert into `order` (oid, uid, otime, 
+      fid, totalprice, foodnum, 
+      tijiaotime)
     values (#{oid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{otime,jdbcType=TIMESTAMP}, 
-      #{fid,jdbcType=INTEGER}, #{totalprice,jdbcType=DOUBLE})
+      #{fid,jdbcType=INTEGER}, #{totalprice,jdbcType=DOUBLE}, #{foodnum,jdbcType=INTEGER}, 
+      #{tijiaotime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.food.lehuo.bean.Order">
     insert into order
@@ -123,6 +127,12 @@
       <if test="totalprice != null">
         totalprice,
       </if>
+      <if test="foodnum != null">
+        foodnum,
+      </if>
+      <if test="tijiaotime != null">
+        tijiaotime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="oid != null">
@@ -139,6 +149,12 @@
       </if>
       <if test="totalprice != null">
         #{totalprice,jdbcType=DOUBLE},
+      </if>
+      <if test="foodnum != null">
+        #{foodnum,jdbcType=INTEGER},
+      </if>
+      <if test="tijiaotime != null">
+        #{tijiaotime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -166,6 +182,12 @@
       <if test="record.totalprice != null">
         totalprice = #{record.totalprice,jdbcType=DOUBLE},
       </if>
+      <if test="record.foodnum != null">
+        foodnum = #{record.foodnum,jdbcType=INTEGER},
+      </if>
+      <if test="record.tijiaotime != null">
+        tijiaotime = #{record.tijiaotime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +199,9 @@
       uid = #{record.uid,jdbcType=INTEGER},
       otime = #{record.otime,jdbcType=TIMESTAMP},
       fid = #{record.fid,jdbcType=INTEGER},
-      totalprice = #{record.totalprice,jdbcType=DOUBLE}
+      totalprice = #{record.totalprice,jdbcType=DOUBLE},
+      foodnum = #{record.foodnum,jdbcType=INTEGER},
+      tijiaotime = #{record.tijiaotime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +221,12 @@
       <if test="totalprice != null">
         totalprice = #{totalprice,jdbcType=DOUBLE},
       </if>
+      <if test="foodnum != null">
+        foodnum = #{foodnum,jdbcType=INTEGER},
+      </if>
+      <if test="tijiaotime != null">
+        tijiaotime = #{tijiaotime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where oid = #{oid,jdbcType=INTEGER}
   </update>
@@ -205,7 +235,32 @@
     set uid = #{uid,jdbcType=INTEGER},
       otime = #{otime,jdbcType=TIMESTAMP},
       fid = #{fid,jdbcType=INTEGER},
-      totalprice = #{totalprice,jdbcType=DOUBLE}
+      totalprice = #{totalprice,jdbcType=DOUBLE},
+      foodnum = #{foodnum,jdbcType=INTEGER},
+      tijiaotime = #{tijiaotime,jdbcType=TIMESTAMP}
     where oid = #{oid,jdbcType=INTEGER}
   </update>
+  <select id="getcarList" resultMap="olist">
+  	SELECT o.*,f.* FROM `order` o
+		INNER JOIN food f ON(o.fid=f.fid)
+  </select>
+  <resultMap type="Order" id="olist" autoMapping="true">
+  <association property="food" javaType="Food">
+			<id column="fid" property="fid"/>
+			<result column="fname" property="fname"/>
+			<result column="fportrait" property="fportrait"/>
+			<result column="price" property="price"/>
+			<result column="fdescribe" property="fdescribe"/>
+			<result column="fimg" property="fimg"/>
+		</association> 
+  </resultMap>
+  
+  <select id="findByFid" resultType="com.food.lehuo.bean.Order">
+  	select * from `order` where fid=#{fid}
+  </select>
+  
+  <update id="updateOrder" parameterType="com.food.lehuo.bean.Order">
+  		update `order` set foodnum=#{foodnum},otime=#{otime}
+  </update>
+  
 </mapper>

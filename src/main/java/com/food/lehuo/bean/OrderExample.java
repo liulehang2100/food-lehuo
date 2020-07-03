@@ -404,6 +404,126 @@ public class OrderExample {
             addCriterion("totalprice not between", value1, value2, "totalprice");
             return (Criteria) this;
         }
+
+        public Criteria andFoodnumIsNull() {
+            addCriterion("foodnum is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumIsNotNull() {
+            addCriterion("foodnum is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumEqualTo(Integer value) {
+            addCriterion("foodnum =", value, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumNotEqualTo(Integer value) {
+            addCriterion("foodnum <>", value, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumGreaterThan(Integer value) {
+            addCriterion("foodnum >", value, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumGreaterThanOrEqualTo(Integer value) {
+            addCriterion("foodnum >=", value, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumLessThan(Integer value) {
+            addCriterion("foodnum <", value, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumLessThanOrEqualTo(Integer value) {
+            addCriterion("foodnum <=", value, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumIn(List<Integer> values) {
+            addCriterion("foodnum in", values, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumNotIn(List<Integer> values) {
+            addCriterion("foodnum not in", values, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumBetween(Integer value1, Integer value2) {
+            addCriterion("foodnum between", value1, value2, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andFoodnumNotBetween(Integer value1, Integer value2) {
+            addCriterion("foodnum not between", value1, value2, "foodnum");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeIsNull() {
+            addCriterion("tijiaotime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeIsNotNull() {
+            addCriterion("tijiaotime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeEqualTo(Date value) {
+            addCriterion("tijiaotime =", value, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeNotEqualTo(Date value) {
+            addCriterion("tijiaotime <>", value, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeGreaterThan(Date value) {
+            addCriterion("tijiaotime >", value, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("tijiaotime >=", value, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeLessThan(Date value) {
+            addCriterion("tijiaotime <", value, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeLessThanOrEqualTo(Date value) {
+            addCriterion("tijiaotime <=", value, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeIn(List<Date> values) {
+            addCriterion("tijiaotime in", values, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeNotIn(List<Date> values) {
+            addCriterion("tijiaotime not in", values, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeBetween(Date value1, Date value2) {
+            addCriterion("tijiaotime between", value1, value2, "tijiaotime");
+            return (Criteria) this;
+        }
+
+        public Criteria andTijiaotimeNotBetween(Date value1, Date value2) {
+            addCriterion("tijiaotime not between", value1, value2, "tijiaotime");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

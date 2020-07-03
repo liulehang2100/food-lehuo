@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 11496
-  Date: 2019/12/17
-  Time: 11:14
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -31,6 +24,40 @@
     <link rel="stylesheet" href="static/css/register_css/animate.css">
     <link rel="stylesheet" href="static/css/register_css/style.css">
     <link href="Logo.png" rel="icon">
+    <link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="static/js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="static/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!---->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="static/js/move-top.js"></script>
+		<script type="text/javascript" src="static/js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+	<!-- start-smoth-scrolling -->
+<link href="static/css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="static/css/component.css" />
+	<!-- animation-effect -->
+<link href="static/css/animate.min.css" rel="stylesheet"> 
+<script src="static/js/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
 
     <!-- Modernizr JS -->
     <script src="static/js/jquery-3.4.1.js"></script>
@@ -48,16 +75,32 @@
     });
   </script>
   <c:set var="text" value="${text}"></c:set>
+  <div class="header">
+	<div class="container">
+		<div class="logo animated wow pulse" data-wow-duration="1000ms" data-wow-delay="500ms">
+			<h1><a href="index.html"><span>C</span><img src="images/oo.png" alt=""><img src="images/oo.png" alt="">乐活</a></h1>
+		</div>
+		<div class="nav-icon">		
+			<a href="#" class="navicon"></a>
+				<div class="toggle">
+					<ul class="toggle-menu">
+						<li><a  href="home">首页</a></li>
+						<li><a  href="menu.html">菜单</a></li>
+						<li><a  href="Blog.html">博客</a></li>
+						<li><a  href="car.html">购物车</a></li>
+					</ul>
+				</div>
+			<script>
+			$('.navicon').on('click', function (e) {
+			  e.preventDefault();
+			  $(this).toggleClass('navicon--active');
+			  $('.toggle').toggleClass('toggle--active');
+			});
+			</script>
+		</div>
+	<div class="clearfix"></div>
+	</div>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <ul class="menu">
-          <li><a href="#">Style 1</a></li>
-          <li><a href="#">Style 2</a></li>
-          <li class="active"><a href="#">Style 3</a></li>
-        </ul>
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-4 col-md-push-8">
 
@@ -103,14 +146,14 @@
   </div>
 
   <!-- jQuery -->
-  <script src="js/register_js/jquery.min.js"></script>
+  <script src="static/js/register_js/jquery.min.js"></script>
   <!-- Bootstrap -->
-  <script src="js/register_js/bootstrap.min.js"></script>
+  <script src="static/js/register_js/bootstrap.min.js"></script>
   <!-- Placeholder -->
-  <script src="js/register_js/jquery.placeholder.min.js"></script>
+  <script src="static/js/register_js/jquery.placeholder.min.js"></script>
   <!-- Waypoints -->
-  <script src="js/register_js/jquery.waypoints.min.js"></script>
+  <script src="static/js/register_js/jquery.waypoints.min.js"></script>
   <!-- Main JS -->
-  <script src="js/register_js/main.js"></script>
+  <script src="static/js/register_js/main.js"></script>
   </body>
 </html>

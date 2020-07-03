@@ -13,7 +13,23 @@ public class Order {
 
     private Double totalprice;
 
-    public Integer getOid() {
+    private Integer foodnum;
+
+    private Date tijiaotime;
+    
+    private Food food;
+    
+    
+
+    public Food getFood() {
+		return food;
+	}
+
+	public void setFood(Food food) {
+		this.food = food;
+	}
+
+	public Integer getOid() {
         return oid;
     }
 
@@ -51,5 +67,21 @@ public class Order {
 
     public void setTotalprice(Double totalprice) {
         this.totalprice = totalprice;
+    }
+
+    public Integer getFoodnum() {
+        return foodnum;
+    }
+
+    public void setFoodnum(Integer foodnum) {
+        this.foodnum = foodnum;
+    }
+
+    public Date getTijiaotime() {
+        return tijiaotime;
+    }
+
+    public void setTijiaotime(Date tijiaotime) {
+        this.tijiaotime = tijiaotime;
     }
 }

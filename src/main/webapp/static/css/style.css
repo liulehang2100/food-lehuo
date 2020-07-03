@@ -130,13 +130,13 @@ i.glyphicon.glyphicon-menu-hamburger {
   position: absolute;
 }
 .hover-fold:hover .top {
-  -moz-transform: rotateX(-180deg);
+  -moz-transform: rotateX(-180deg); 
   -ms-transform: rotateX(-180deg);
   -webkit-transform: rotateX(-180deg);
   transform: rotateX(-180deg);
 }
 .hover-fold .front {
-  background: url(../images/aa.jpg) top;
+ /*  background: url(./static/images/aa.jpg) top; */
   height: 100%;
   /*has to be 100% of .top */
   width: 100%;
@@ -159,25 +159,25 @@ i.glyphicon.glyphicon-menu-hamburger {
   line-height:2em;
 }
 .hover-fold .bottom {
-  background: url(../images/aa.jpg) bottom;
+  /* background: url(./static/images/aa.jpg) bottom; */
   height: 50%;
   position: absolute;
   top: 50%;
   width: 100%;
   z-index: 0;
 }
-.hover-fold .front1 {
-  background: url(../images/aa1.jpg) top;
+/* .hover-fold .front1 {
+  background: url(./static/images/aa1.jpg) top;
 }
 .hover-fold .bottom1{
-  background: url(../images/aa1.jpg) bottom;
+  background: url(./static/images/aa1.jpg) bottom;
 }
 .hover-fold .front2 {
-  background: url(../images/aa2.jpg) top;
+  background: url(./static/images/aa2.jpg) top;
 }
 .hover-fold .bottom2{
-  background: url(../images/aa2.jpg) bottom;
-}
+  background: url(./static/images/aa2.jpg) bottom;
+} */
 /*--content--*/
 .content-top-top {
     padding: 6em 0;
@@ -354,7 +354,7 @@ ul.grid-news li b {
 }
 /*--conent--*/
 .content-item {
-  background: url(../images/ne.jpg) no-repeat;
+  /* background: url(../images/ne.jpg) no-repeat; */
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -363,7 +363,7 @@ ul.grid-news li b {
   position: relative;
   z-index: 9999;
 }
-.content-item1 {
+/* .content-item1 {
   background: url(../images/ne1.jpg) no-repeat;
 }
 .content-item2 {
@@ -371,7 +371,7 @@ ul.grid-news li b {
 }
 .content-item3 {
   background: url(../images/ne3.jpg) no-repeat;
-}
+} */
 .content-item .overlay {
   border-bottom: 100px solid #97824b;
   border-left: 100px solid transparent;
@@ -864,7 +864,7 @@ i.glyphicon.glyphicon-comment {
 }
 .lone-line p:before {
     content: "";
-    background: url(../images/qu3.png) no-repeat;
+    background: url(../static/images/qu3.png) no-repeat;
     width: 30px;
     height:24px;
     display: inline-block;
@@ -1030,7 +1030,7 @@ p.reply a i{
 .search input[type="submit"] {	
 	width: 30px;
 	height: 30px;
-	background: url(../images/search.png)no-repeat 0px 10px ;
+	background: url(../static/images/search.png)no-repeat 0px 10px ;
 	padding: 0px 1px;
 	border: none;
 	cursor: pointer;
@@ -1049,7 +1049,7 @@ p.reply a i{
 .popular li i{
 	width: 17px;
   height: 17px;
-  background: url(../images/img-sprite.png)no-repeat -562px -40px;
+  background: url(../static/images/img-sprite.png)no-repeat -562px -40px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 16px;

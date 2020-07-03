@@ -27,4 +27,10 @@ public interface OrderMapper {
     int updateByPrimaryKeySelective(Order record);
 
     int updateByPrimaryKey(Order record);
+    
+    List<Order> getcarList();
+    
+    Order findByFid(Integer fid);
+    
+    int updateOrder(Order fidlist);
 }

@@ -434,66 +434,6 @@ public class FoodExample {
             return (Criteria) this;
         }
 
-        public Criteria andWeightIsNull() {
-            addCriterion("weight is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightIsNotNull() {
-            addCriterion("weight is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightEqualTo(Integer value) {
-            addCriterion("weight =", value, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightNotEqualTo(Integer value) {
-            addCriterion("weight <>", value, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightGreaterThan(Integer value) {
-            addCriterion("weight >", value, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightGreaterThanOrEqualTo(Integer value) {
-            addCriterion("weight >=", value, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightLessThan(Integer value) {
-            addCriterion("weight <", value, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightLessThanOrEqualTo(Integer value) {
-            addCriterion("weight <=", value, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightIn(List<Integer> values) {
-            addCriterion("weight in", values, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightNotIn(List<Integer> values) {
-            addCriterion("weight not in", values, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightBetween(Integer value1, Integer value2) {
-            addCriterion("weight between", value1, value2, "weight");
-            return (Criteria) this;
-        }
-
-        public Criteria andWeightNotBetween(Integer value1, Integer value2) {
-            addCriterion("weight not between", value1, value2, "weight");
-            return (Criteria) this;
-        }
-
         public Criteria andRecommendIsNull() {
             addCriterion("recommend is null");
             return (Criteria) this;
@@ -671,6 +611,76 @@ public class FoodExample {
 
         public Criteria andSidNotBetween(Integer value1, Integer value2) {
             addCriterion("sid not between", value1, value2, "sid");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgIsNull() {
+            addCriterion("fimg is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgIsNotNull() {
+            addCriterion("fimg is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgEqualTo(String value) {
+            addCriterion("fimg =", value, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgNotEqualTo(String value) {
+            addCriterion("fimg <>", value, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgGreaterThan(String value) {
+            addCriterion("fimg >", value, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgGreaterThanOrEqualTo(String value) {
+            addCriterion("fimg >=", value, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgLessThan(String value) {
+            addCriterion("fimg <", value, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgLessThanOrEqualTo(String value) {
+            addCriterion("fimg <=", value, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgLike(String value) {
+            addCriterion("fimg like", value, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgNotLike(String value) {
+            addCriterion("fimg not like", value, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgIn(List<String> values) {
+            addCriterion("fimg in", values, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgNotIn(List<String> values) {
+            addCriterion("fimg not in", values, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgBetween(String value1, String value2) {
+            addCriterion("fimg between", value1, value2, "fimg");
+            return (Criteria) this;
+        }
+
+        public Criteria andFimgNotBetween(String value1, String value2) {
+            addCriterion("fimg not between", value1, value2, "fimg");
             return (Criteria) this;
         }
     }

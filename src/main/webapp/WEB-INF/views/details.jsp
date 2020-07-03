@@ -1,24 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
 <meta charset="UTF-8">
-<title>Star Wars Imperial Army's Product Slider!</title>
+<title>详情页</title>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-<link rel="stylesheet" href="css/normalize.min.css">
-<link rel='stylesheet' href='css/swiper.min.css'>
-<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="./static/css/normalize.min.css">
+<link rel='stylesheet' href='./static/css/swiper.min.css'>
+<link rel="stylesheet" href="./static/css/style2.css">
 
 
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script src="./static/js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="./static/css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,10 +28,10 @@
 <!---->
 <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
-<link href="css/styles.css" rel="stylesheet">
+<link href="./static/css/styles.css" rel="stylesheet">
 <!-- animation-effect -->
-<link href="css/animate.min.css" rel="stylesheet"> 
-<script src="js/wow.min.js"></script>
+<link href="./static/css/animate.min.css" rel="stylesheet"> 
+<script src="./static/js/wow.min.js"></script>
 <script>
  new WOW().init();
 </script>
@@ -76,29 +77,16 @@
 
 <div class="product-img">
 
-  <div class="product-img__item" id="img1">
-	<img src="images/item-1.png" alt="star wars" class="product-img__img">
-  </div>
-
-  <div class="product-img__item" id="img2">
-	<img src="images/item-2.png" alt="star wars" class="product-img__img">
-  </div>
-
-  <div class="product-img__item" id="img3">
-	<img src="images/item-3.png" alt="star wars" class="product-img__img">
-  </div>
-
   <div class="product-img__item" id="img4">
-	<img src="images/item-4.png" alt="star wars" class="product-img__img">
+	<img src="${food.fimg }" alt="star wars" style="" class="product-img__img">
   </div>
-
 
 </div>
 
 
 
 <div class="product-slider">
-  <button class="prev disabled">
+  <!-- <button class="prev disabled">
 	<span class="icon">
 	  <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-left"></use></svg>
 	</span>
@@ -107,43 +95,23 @@
 	<span class="icon">
 	  <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg>
 	</span>
-  </button>
+  </button> -->
 
   <div class="product-slider__wrp swiper-wrapper">
 	<div class="product-slider__item swiper-slide" data-target="img4">
 	  <div class="product-slider__card">
-		<img src="images/item-4-bg.jpg" alt="star wars" class="product-slider__cover">
+		<img src="./static/images/item-4-bg.jpg" alt="star wars" class="product-slider__cover">
 		<div class="product-slider__content">
 		  <h1 class="product-slider__title">
-			STORMTROPER <br>
-			HELMET
+			${food.fname }
 		  </h1>
-		  <span class="product-slider__price">$1.299,<sup>99</sup></span>
+		  <span class="product-slider__price">￥${food.price }</span>
 		  <div class="product-ctr">
 			<div class="product-labels">
-			  <div class="product-labels__title">HELMET SIZE</div>
+			  <div class="product-labels__title">描述：</div>
 
 			  <div class="product-labels__group">
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type5" >
-				  <span class="product-labels__txt">S</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type5" checked>
-				  <span class="product-labels__txt">M</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type5" >
-				  <span class="product-labels__txt">L</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type5" >
-				  <span class="product-labels__txt">XL</span>
-				</label>
-
+					${food.fdescribe }
 			  </div>
 
 			</div>
@@ -164,246 +132,26 @@
 				  </svg>
 				</div>
 				<div class="product-inf__percent-txt">
-				  80%
+				  ${food.recommend }%
 				</div>
 			  </div>
 
-			  <span class="product-inf__title">DURABILITY RATE</span>
+			  <span class="product-inf__title">推荐率</span>
 			</div>
 
 		  </div>
 			
 		  <div class="product-slider__bottom">
-			<button class="product-slider__cart">
-			  <a href="car.html">加入购物车</a>
+			<button class="product-slider__cart tooltip-show" id="car" data-toggle="tooltip">
+			加入购物车
+			  
 			</button>
+			<input id="fid" hidden="hidden" value="${food.fid }"/>
 		  </div>
 		  
 		</div>
 	  </div>
 	</div>
-	<div class="product-slider__item swiper-slide" data-target="img1">
-	  <div class="product-slider__card">
-		<img src="images/item-1-bg.jpg" alt="star wars" class="product-slider__cover">
-		<div class="product-slider__content">
-		  <h1 class="product-slider__title">
-			IMPERIAL  ARMY’S <br> TIE FIGHTER
-		  </h1>
-		  <span class="product-slider__price">$9.999,<sup>99</sup></span>
-		  <div class="product-ctr">
-			<div class="product-labels">
-			  <div class="product-labels__title">ENGINE UNIT</div>
-
-			  <div class="product-labels__group">
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type1" checked>
-				  <span class="product-labels__txt">P-S4 TWIN</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type1">
-				  <span class="product-labels__txt">P-W401</span>
-				</label>
-			  </div>
-
-			</div>
-
-			<span class="hr-vertical"></span>
-
-			<div class="product-inf">
-			  <div class="product-inf__percent">
-				<div class="product-inf__percent-circle">
-				  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-					<defs>
-					  <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-						<stop offset="0%" stop-color="#0c1e2c" stop-opacity="0" />
-						<stop offset="100%" stop-color="#cb2240" stop-opacity="1" />
-					  </linearGradient>
-					</defs>
-					<circle cx="50" cy="50" r="47" stroke-dasharray="225, 300" stroke="#cb2240" stroke-width="4" fill="none"/>
-				  </svg>
-				</div>
-				<div class="product-inf__percent-txt">
-				  75%
-				</div>
-			  </div>
-
-			  <span class="product-inf__title">DURABILITY</span>
-			</div>
-
-		  </div>
-
-		  <div class="product-slider__bottom">
-		  			<button class="product-slider__cart">
-		  			  <a href="car.html">加入购物车</a>
-		  			</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-
-	<div class="product-slider__item swiper-slide" data-target="img2">
-	  <div class="product-slider__card">
-		<img src="images/item-2-bg.jpg" alt="star wars" class="product-slider__cover">
-		<div class="product-slider__content">
-		  <h1 class="product-slider__title">
-			KYLO REN'S <br> LIGHTSABER
-		  </h1>
-		  <span class="product-slider__price">$1.699,<sup>99</sup></span>
-		  <div class="product-ctr">
-			<div class="product-labels">
-			  <div class="product-labels__title">VOLTAGE RANGE</div>
-
-			  <div class="product-labels__group">
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type3" checked>
-				  <span class="product-labels__txt">2000 <sup>WATT</sup></span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type3">
-				  <span class="product-labels__txt">2800 <sup>WATT</sup></span>
-				</label>
-			  </div>
-
-			  <div class="product-labels__title">LASER SIZE</div>
-
-			  <div class="product-labels__group">
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type2" >
-				  <span class="product-labels__txt">S</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type2" checked>
-				  <span class="product-labels__txt">M</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type2" >
-				  <span class="product-labels__txt">L</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type2" >
-				  <span class="product-labels__txt">XL</span>
-				</label>
-
-			  </div>
-
-			</div>
-
-			<span class="hr-vertical"></span>
-
-			<div class="product-inf">
-			  <div class="product-inf__percent">
-				<div class="product-inf__percent-circle">
-				  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-					<defs>
-					  <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-						<stop offset="0%" stop-color="#0c1e2c" stop-opacity="0" />
-						<stop offset="100%" stop-color="#cb2240" stop-opacity="1" />
-					  </linearGradient>
-					</defs>
-					<circle cx="50" cy="50" r="47" stroke-dasharray="240, 300" stroke="#cb2240" stroke-width="4" fill="none"/>
-				  </svg>
-				</div>
-				<div class="product-inf__percent-txt">
-				  80%
-				</div>
-			  </div>
-
-			  <span class="product-inf__title">DURABILITY</span>
-			</div>
-
-		  </div>
-
-		  <div class="product-slider__bottom">
-		  			<button class="product-slider__cart">
-		  			  <a href="car.html">加入购物车</a>
-		  			</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-
-	<div class="product-slider__item swiper-slide" data-target="img3">
-	  <div class="product-slider__card">
-		<img src="images/item-3-bg.jpg" alt="star wars" class="product-slider__cover">
-		<div class="product-slider__content">
-		  <h1 class="product-slider__title">
-			IMPERIAL ARMY'S <br>
-			DEATH STAR
-		  </h1>
-		  <span class="product-slider__price">$9.999,<sup>99</sup></span>
-		  <div class="product-ctr">
-			<div class="product-labels">
-			  <div class="product-labels__title">HYPERDRIVE RATING</div>
-
-			  <div class="product-labels__group">
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type6" checked>
-				  <span class="product-labels__txt">CLASS 4</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type6">
-				  <span class="product-labels__txt">CLASS 20</span>
-				</label>
-			  </div>
-
-			  <div class="product-labels__title">ARMANENT</div>
-
-			  <div class="product-labels__group">
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type7" checked>
-				  <span class="product-labels__txt">SUPERLASER</span>
-				</label>
-
-				<label class="product-labels__item">
-				  <input type="radio" class="product-labels__checkbox" name="type7">
-				  <span class="product-labels__txt">TURBOLASER</span>
-				</label>
-			  </div>
-
-			</div>
-
-			<span class="hr-vertical"></span>
-
-			<div class="product-inf">
-			  <div class="product-inf__percent">
-				<div class="product-inf__percent-circle">
-				  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-					<defs>
-					  <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-						<stop offset="0%" stop-color="#0c1e2c" stop-opacity="0" />
-						<stop offset="100%" stop-color="#cb2240" stop-opacity="1" />
-					  </linearGradient>
-					</defs>
-					<circle cx="50" cy="50" r="47" stroke-dasharray="240, 300" stroke="#cb2240" stroke-width="4" fill="none"/>
-				  </svg>
-				</div>
-				<div class="product-inf__percent-txt">
-				  80%
-				</div>
-			  </div>
-
-			  <span class="product-inf__title">DURABILITY RATE</span>
-			</div>
-
-		  </div>
-
-		  <div class="product-slider__bottom">
-		  			<button class="product-slider__cart">
-		  			  <a href="car.html">加入购物车</a>
-		  			</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-
-	
-
   </div>
 </div>
 
@@ -456,14 +204,41 @@
 	<!--//footer-->
 
 
-<script src='js/jquery.min.js'></script>
-<script src='js/swiper.min.js'></script>
-
-<script src="js/index.js"></script>
-
-
-
+<script src='./static/js/jquery.min.js'></script>
+<script src='./static/js/swiper.min.js'></script>
+<script src="./static/js/index.js"></script>
+<script src="./static/js/bootstrap.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+$("#car").click(function(){
+		var fid=$("#fid").val();
+		$.ajax({
+			type:"post",
+			url:"addcar",
+			data:{fid:fid},
+			success:function(data){
+				data = eval('('+data+')');
+				if(0<data.result<2){
+					alert("添加成功！！");
+				}else if(data.result=2){
+					alert("添加成功！");
+				}
+				else{
+					alert("添加失败！！");
+				}
+			}
+		});
+	}) 
+	
+	
+	
+	
+	
+});
+</script>
 
 </body>
+
+
 
 </html>

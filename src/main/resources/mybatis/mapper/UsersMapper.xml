@@ -225,4 +225,5 @@
       uemail = #{uemail,jdbcType=VARCHAR}
     where uid = #{uid,jdbcType=INTEGER}
   </update>
+  
 </mapper>

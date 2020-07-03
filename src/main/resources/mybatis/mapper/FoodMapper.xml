@@ -7,10 +7,10 @@
     <result column="fportrait" jdbcType="VARCHAR" property="fportrait" />
     <result column="price" jdbcType="DOUBLE" property="price" />
     <result column="fdescribe" jdbcType="VARCHAR" property="fdescribe" />
-    <result column="weight" jdbcType="INTEGER" property="weight" />
     <result column="recommend" jdbcType="INTEGER" property="recommend" />
     <result column="cuisine" jdbcType="INTEGER" property="cuisine" />
     <result column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="fimg" jdbcType="VARCHAR" property="fimg" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -71,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    fid, fname, fportrait, price, fdescribe, weight, recommend, cuisine, sid
+    fid, fname, fportrait, price, fdescribe, recommend, cuisine, sid, fimg
   </sql>
   <select id="selectByExample" parameterType="com.food.lehuo.bean.FoodExample" resultMap="BaseResultMap">
     select
@@ -105,13 +105,11 @@
   </delete>
   <insert id="insert" parameterType="com.food.lehuo.bean.Food">
     insert into food (fid, fname, fportrait, 
-      price, fdescribe, weight, 
-      recommend, cuisine, sid
-      )
+      price, fdescribe, recommend, 
+      cuisine, sid, fimg)
     values (#{fid,jdbcType=INTEGER}, #{fname,jdbcType=VARCHAR}, #{fportrait,jdbcType=VARCHAR}, 
-      #{price,jdbcType=DOUBLE}, #{fdescribe,jdbcType=VARCHAR}, #{weight,jdbcType=INTEGER}, 
-      #{recommend,jdbcType=INTEGER}, #{cuisine,jdbcType=INTEGER}, #{sid,jdbcType=INTEGER}
-      )
+      #{price,jdbcType=DOUBLE}, #{fdescribe,jdbcType=VARCHAR}, #{recommend,jdbcType=INTEGER}, 
+      #{cuisine,jdbcType=INTEGER}, #{sid,jdbcType=INTEGER}, #{fimg,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.food.lehuo.bean.Food">
     insert into food
@@ -131,9 +129,6 @@
       <if test="fdescribe != null">
         fdescribe,
       </if>
-      <if test="weight != null">
-        weight,
-      </if>
       <if test="recommend != null">
         recommend,
       </if>
@@ -142,6 +137,9 @@
       </if>
       <if test="sid != null">
         sid,
+      </if>
+      <if test="fimg != null">
+        fimg,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -160,9 +158,6 @@
       <if test="fdescribe != null">
         #{fdescribe,jdbcType=VARCHAR},
       </if>
-      <if test="weight != null">
-        #{weight,jdbcType=INTEGER},
-      </if>
       <if test="recommend != null">
         #{recommend,jdbcType=INTEGER},
       </if>
@@ -171,6 +166,9 @@
       </if>
       <if test="sid != null">
         #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="fimg != null">
+        #{fimg,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -198,9 +196,6 @@
       <if test="record.fdescribe != null">
         fdescribe = #{record.fdescribe,jdbcType=VARCHAR},
       </if>
-      <if test="record.weight != null">
-        weight = #{record.weight,jdbcType=INTEGER},
-      </if>
       <if test="record.recommend != null">
         recommend = #{record.recommend,jdbcType=INTEGER},
       </if>
@@ -209,6 +204,9 @@
       </if>
       <if test="record.sid != null">
         sid = #{record.sid,jdbcType=INTEGER},
+      </if>
+      <if test="record.fimg != null">
+        fimg = #{record.fimg,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -222,10 +220,10 @@
       fportrait = #{record.fportrait,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DOUBLE},
       fdescribe = #{record.fdescribe,jdbcType=VARCHAR},
-      weight = #{record.weight,jdbcType=INTEGER},
       recommend = #{record.recommend,jdbcType=INTEGER},
       cuisine = #{record.cuisine,jdbcType=INTEGER},
-      sid = #{record.sid,jdbcType=INTEGER}
+      sid = #{record.sid,jdbcType=INTEGER},
+      fimg = #{record.fimg,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -245,9 +243,6 @@
       <if test="fdescribe != null">
         fdescribe = #{fdescribe,jdbcType=VARCHAR},
       </if>
-      <if test="weight != null">
-        weight = #{weight,jdbcType=INTEGER},
-      </if>
       <if test="recommend != null">
         recommend = #{recommend,jdbcType=INTEGER},
       </if>
@@ -256,6 +251,9 @@
       </if>
       <if test="sid != null">
         sid = #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="fimg != null">
+        fimg = #{fimg,jdbcType=VARCHAR},
       </if>
     </set>
     where fid = #{fid,jdbcType=INTEGER}
@@ -266,10 +264,10 @@
       fportrait = #{fportrait,jdbcType=VARCHAR},
       price = #{price,jdbcType=DOUBLE},
       fdescribe = #{fdescribe,jdbcType=VARCHAR},
-      weight = #{weight,jdbcType=INTEGER},
       recommend = #{recommend,jdbcType=INTEGER},
       cuisine = #{cuisine,jdbcType=INTEGER},
-      sid = #{sid,jdbcType=INTEGER}
+      sid = #{sid,jdbcType=INTEGER},
+      fimg = #{fimg,jdbcType=VARCHAR}
     where fid = #{fid,jdbcType=INTEGER}
   </update>
 </mapper>

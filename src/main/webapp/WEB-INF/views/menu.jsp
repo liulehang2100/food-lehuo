@@ -1,27 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Menu</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
+<script src="./static/js/jquery.min.js"></script>
+<!-- Custom Theme files
+theme-style -->
+<link href="./static/css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!-- //theme-style -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!---->
+
 <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
-<link href="css/styles.css" rel="stylesheet">
+<link href="./static/css/styles.css" rel="stylesheet">
 <!-- animation-effect -->
-<link href="css/animate.min.css" rel="stylesheet"> 
-<script src="js/wow.min.js"></script>
+<link href="./static/css/animate.min.css" rel="stylesheet"> 
+<link href="./static/css/pagination.css" rel="stylesheet"> 
+<script src="./static/js/wow.min.js"></script>
+<script src="./static/js/jquery.pagination.js"></script>
 <script>
  new WOW().init();
 </script>
@@ -32,7 +35,7 @@
 <div class="header head">
 	<div class="container">
 		<div class="logo animated wow pulse" data-wow-duration="1000ms" data-wow-delay="500ms">
-			<h1><a href="index.html"><span>C</span><img src="images/oo.png" alt=""><img src="images/oo.png" alt="">乐活</a></h1>
+			<h1><a href="index.html"><span>C</span><img src="./static/images/oo.png" alt=""><img src="./static/images/oo.png" alt="">乐活</a></h1>
 		</div>
 		<div class="nav-icon">		
 			<a href="#" class="navicon"></a>
@@ -72,114 +75,52 @@
 				<div class="clearfix"> </div>
 			</div>
 			<div class="menu-bottom animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="details.html">
-							<img src="images/me.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>菜名</h4>
-								<p>价格</p>				
-							</div>
-						</a>						
+				<c:forEach items="${pageInfo.list}" var="food">
+					<div class="col-md-4 menu-bottom1" style="margin-top:25px;">
+						<div class="btm-right">
+							<a href="findFood?fid=${food.fid }">
+								<img src="${food.fportrait }" alt="" class="img-responsive">
+								<div class="captn">
+									<h4>${food.fname }</h4>
+									<p>￥${food.price }</p>
+								</div>
+							</a>						
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="Blog.html">
-							<img src="images/me1.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>Lorem</h4>
-								<p>$20.00</p>				
-							</div>
-						</a>						
-					</div>
-				</div>
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="Blog.html">
-							<img src="images/me2.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>Lorem</h4>
-								<p>$20.00</p>				
-							</div>
-						</a>	
-					</div>
-				</div>
-				<div class="clearfix"> </div>				
+				</c:forEach>			
 			</div>
-			<div class="menu-bottom animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="Blog.html">
-							<img src="images/me3.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>Lorem</h4>
-								<p>$20.00</p>				
-							</div>
-						</a>	
-					</div>
-				</div>
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="Blog.html">
-							<img src="images/me4.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>Lorem</h4>
-								<p>$20.00</p>				
-							</div>
-						</a>	
-					</div>
-				</div>
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="Blog.html">
-							<img src="images/me5.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>Lorem</h4>
-								<p>$20.00</p>				
-							</div>
-						</a>		
-					</div>
-				</div>
-				<div class="clearfix"> </div>				
-			</div>
-			<div class="menu-bottom animated wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="Blog.html">
-							<img src="images/me6.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>Lorem</h4>
-								<p>$20.00</p>				
-							</div>
-						</a>		
-					</div>
-				</div>
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="Blog.html">
-							<img src="images/me7.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>Lorem</h4>
-								<p>$20.00</p>				
-							</div>
-						</a>		
-					</div>
-				</div>
-				<div class="col-md-4 menu-bottom1">
-					<div class="btm-right">
-						<a href="Blog.html">
-							<img src="images/me8.jpg" alt="" class="img-responsive">
-							<div class="captn">
-								<h4>Lorem</h4>
-								<p>$20.00</p>				
-							</div>
-						</a>	
-					</div>
-				</div>
-				<div class="clearfix"> </div>				
-			</div>
+			
 		</div>
+		<!--分页-->
+           		<!-- <div id="page"></div> -->
+           		<div id="div_pagination_bottom" class="text-center">
+			            <nav aria-label="Page navigation">
+			                <ul class="pagination">
+			                     <li>
+			                         <a href="${pageContext.request.contextPath}/foodList?currpage=${pageInfo.pageNum-1}" aria-label="Previous">
+			                             <span aria-hidden="true">&laquo;</span>
+			                         </a>
+			                     </li>
+			                     <c:forEach items="${pageInfo.navigatepageNums }" var="page_Num">
+			                         <c:if test="${page_Num == pageInfo.pageNum }">
+			                             <li class="active"><a href="#" style="margin-top: 7px;">${ page_Num}</a></li>
+			                        </c:if>
+			                         <c:if test="${page_Num != pageInfo.pageNum }">
+			                            <li>
+			                                 <a style="margin-top: 7px;" href="${pageContext.request.contextPath}/foodList?currpage=${ page_Num}">${ page_Num}</a>
+			                            </li>
+			                        </c:if>
+			                     </c:forEach>
+			                    <li>
+			                        <a href="${pageContext.request.contextPath}/foodList?currpage=${pageInfo.pageNum+1}"
+			                            aria-label="Next">
+			                             <span aria-hidden="true">&raquo;</span>
+			                         </a>
+			                    </li>
+			                </ul>
+			            </nav>
+			        </div>
+           		<!--分页-->
 	</div>
 <!--footer-->
 	<div class="footer">
@@ -214,6 +155,6 @@
 		</div>
 	</div>		
 	<!--//footer-->
-
+<script type="text/javascript" src="./static/js/bootstrap.min.js"></script>
 </body>
 </html>
